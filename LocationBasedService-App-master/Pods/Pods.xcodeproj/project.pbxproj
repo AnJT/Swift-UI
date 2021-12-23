@@ -16,7 +16,6 @@
 				45BD9732B9E2A6182C528F25FAD774B4 /* PBXTargetDependency */,
 			);
 			name = GooglePlaces;
-			productName = GooglePlaces;
 		};
 		E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */ = {
 			isa = PBXAggregateTarget;
@@ -26,7 +25,6 @@
 			dependencies = (
 			);
 			name = GoogleMaps;
-			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -356,7 +354,7 @@
 		98AB7EAEFA125B1AA4564F0B34BF5908 /* ARAccessory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARAccessory.swift; path = HDAugmentedReality/Classes/Main/ARAccessory.swift; sourceTree = "<group>"; };
 		9A21EF41A25F3B5A6B2D15F93987CD8E /* SharedTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharedTypes.swift; path = Source/Core/SharedTypes.swift; sourceTree = "<group>"; };
 		9A3815F25ADFBA40D833A9EFFE63825E /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EDE886DFB3F935AB2FE6C869BD3E17E /* Polyline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Polyline.swift; path = Sources/Polyline/Polyline.swift; sourceTree = "<group>"; };
 		A0D2EDA49028C6D0A713C656C5688905 /* LocationCoordinate2DTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationCoordinate2DTransform.swift; path = Source/Core/ObjectMapperTransformers/LocationCoordinate2DTransform.swift; sourceTree = "<group>"; };
 		A155A81A4EDC581718F6194B44AC852A /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
@@ -582,6 +580,7 @@
 				7ECC5EA787B241103E76204BDC617DFC /* Types.swift */,
 				CE1B8853E2D9AF8125E227F81BAB4B4A /* Support Files */,
 			);
+			name = GooglePlacesAPI;
 			path = GooglePlacesAPI;
 			sourceTree = "<group>";
 		};
@@ -635,6 +634,7 @@
 				D976FB7EA1B5A1A73E53F0F9789D383D /* Resources */,
 				2ED03F736E76C4BC5E42AE26EE06BB87 /* Support Files */,
 			);
+			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -645,6 +645,7 @@
 				FF8E235B66E0DB833F086E05331C0CC5 /* Resources */,
 				176FD11C956C4B0C89E817F396210381 /* Support Files */,
 			);
+			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
@@ -718,6 +719,7 @@
 				D87FC07AF110A0CC36AD2F6785AC02CC /* Validation.swift */,
 				0E9E154366613725BFCF89B1FF3A1962 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -741,6 +743,7 @@
 				DA0509FA717419F61CF225DA0DC31255 /* StarLayer.swift */,
 				B408CD1D1AAFE6EB6B2E614056F2F8E2 /* Support Files */,
 			);
+			name = Cosmos;
 			path = Cosmos;
 			sourceTree = "<group>";
 		};
@@ -792,6 +795,7 @@
 				9EDE886DFB3F935AB2FE6C869BD3E17E /* Polyline.swift */,
 				E51F3831B425FF71B73101C318F816EB /* Support Files */,
 			);
+			name = Polyline;
 			path = Polyline;
 			sourceTree = "<group>";
 		};
@@ -828,6 +832,7 @@
 				57FFF57C4F1B79692BD2D86F0AAB6BA8 /* Resources */,
 				954B74276264D28C9B4D2749C8C88EDA /* Support Files */,
 			);
+			name = HDAugmentedReality;
 			path = HDAugmentedReality;
 			sourceTree = "<group>";
 		};
@@ -838,6 +843,7 @@
 				64E5369596BA23F3BD54B9AB32B68748 /* Maps */,
 				EC48CB83033289D5443523CEAD72A0B4 /* Support Files */,
 			);
+			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -966,6 +972,7 @@
 				97FDA2C61373025D4BCC6F402A3230B0 /* URLTransform.swift */,
 				25212D9B51B9A7A1A00DAD6FBF62574E /* Support Files */,
 			);
+			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -1238,7 +1245,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -1582,10 +1589,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1610,7 +1618,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1633,10 +1642,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1667,10 +1677,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Polyline/Polyline-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Polyline/Polyline-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1698,6 +1709,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
@@ -1722,10 +1734,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1759,6 +1772,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Target Support Files/Pods-LBSAR/Pods-LBSAR-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1794,10 +1808,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1823,7 +1838,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1845,10 +1861,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Polyline/Polyline-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Polyline/Polyline-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1874,7 +1891,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1897,10 +1915,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2054,7 +2073,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2076,10 +2096,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/GooglePlacesAPI/GooglePlacesAPI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GooglePlacesAPI/GooglePlacesAPI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2110,10 +2131,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2141,6 +2163,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
@@ -2166,10 +2189,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/GooglePlacesAPI/GooglePlacesAPI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GooglePlacesAPI/GooglePlacesAPI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2201,10 +2225,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2236,10 +2261,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/HDAugmentedReality/HDAugmentedReality-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/HDAugmentedReality/HDAugmentedReality-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2271,10 +2297,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/HDAugmentedReality/HDAugmentedReality-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/HDAugmentedReality/HDAugmentedReality-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2306,10 +2333,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2343,6 +2371,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Target Support Files/Pods-LBSAR/Pods-LBSAR-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
