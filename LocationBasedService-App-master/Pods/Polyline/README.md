@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/raphaelmor/Polyline.svg?branch=master)](https://travis-ci.org/raphaelmor/Polyline)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Polyline.svg)](http://cocoadocs.org/docsets/Polyline)
-![](https://img.shields.io/badge/Swift-3.0-green.svg)
+![Swift 5](https://img.shields.io/badge/Swift-5.0-green.svg)
 [![Licence](http://img.shields.io/badge/Licence-MIT-lightgrey.svg)](https://github.com/raphaelmor/Polyline/blob/master/LICENSE.txt)
 
 Polyline encoder / decoder in Swift
@@ -42,37 +42,35 @@ Polyline encoder / decoder in Swift
 
 ## Requirements
 
-- Xcode 8+
-- iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Swift 3.0
-
-Note: The last version to support Swift 2.3 is the 3.x series. 4.0 will only support Swift 3.x.
+- Xcode 11+
+- iOS 10.0+ / Mac OS X 10.12+ / tvOS 10.0+ / watchOS 3.0+ / Linux
+- Swift 5.0
 
 ---
 
 
 ## Integration
-To use this library in your project you can use CocoaPods, Carthage, and/or integrate it manually :
+To use this library in your project you can use CocoaPods, Carthage, Swift Package Manager, and/or integrate it manually :
 
 ### CocoaPods
 You can integrate Polyline in your `Podfile` like this:
 
 ```
-pod 'Polyline', '~> 4.0'
+pod 'Polyline', '~> 5.0'
 ```
 
 ### Carthage
 You can integrate Polyline in your `Cartfile` like this:
 
 ```
-github "raphaelmor/Polyline" ~> 4.0
+github "raphaelmor/Polyline" ~> 5.0
 ```
 
 ### Swift Package Manager
 You can integrate Polyline using the [Swift Package Manager](https://swift.org/package-manager/), add the following package to the `dependencies` in your Package.swift file:
 
 ```swift
-.Package(url: "https://github.com/raphaelmor/Polyline.git", .upToNextMinor(from: "4.2.1"))
+.package(url: "https://github.com/raphaelmor/Polyline.git", from: "5.0.0")
 ```
 
 ### Manual
