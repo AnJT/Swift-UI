@@ -50,11 +50,11 @@ THE SOFTWARE.
 
 ## GoogleMaps
 
-Copyright 2020 Google
+Copyright 2021 Google
 
 ## GooglePlaces
 
-Copyright 2020 Google
+Copyright 2021 Google
 
 ## GooglePlacesAPI
 

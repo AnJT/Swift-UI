@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -16,6 +16,7 @@
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithTextFieldController.h"
 
 #import <GooglePlaces/GooglePlaces.h>
+
 
 @interface AutocompleteWithTextFieldController () <UITextFieldDelegate,
                                                    GMSAutocompleteTableDataSourceDelegate>
@@ -37,13 +38,29 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+  }
+#else
   self.view.backgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
 
   // Configure the text field to our linking.
   _searchField = [[UITextField alloc] initWithFrame:CGRectZero];
+
   _searchField.translatesAutoresizingMaskIntoConstraints = NO;
   _searchField.borderStyle = UITextBorderStyleNone;
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    _searchField.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+    _searchField.backgroundColor = [UIColor whiteColor];
+  }
+#else
   _searchField.backgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
   _searchField.placeholder = NSLocalizedString(@"Demo.Content.Autocomplete.EnterTextPrompt",
                                                @"Prompt to enter text for autocomplete demo");
   _searchField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -62,7 +79,15 @@
   _tableDataSource.delegate = self;
   _tableDataSource.autocompleteFilter = self.autocompleteFilter;
   _tableDataSource.placeFields = self.placeFields;
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+  if (@available(iOS 13.0, *)) {
+    _tableDataSource.tableCellBackgroundColor = [UIColor systemBackgroundColor];
+  } else {
+    _tableDataSource.tableCellBackgroundColor = [UIColor whiteColor];
+  }
+#else
   _tableDataSource.tableCellBackgroundColor = [UIColor whiteColor];
+#endif  // defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0
   _resultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
   _resultsController.tableView.delegate = _tableDataSource;
   _resultsController.tableView.dataSource = _tableDataSource;

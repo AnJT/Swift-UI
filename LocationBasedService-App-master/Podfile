@@ -6,8 +6,8 @@ target 'LBSAR' do
   use_frameworks!
 
   # Pods for LBSAR
-  pod 'GoogleMaps', '3.8.0'
-  pod 'GooglePlaces', '3.8.0'
+  pod 'GoogleMaps', '6.0.0'
+  pod 'GooglePlaces', '6.0.0'
   pod 'GooglePlacesAPI', '1.1.4'
   pod 'Polyline', '4.2.1'
   pod 'Cosmos', '21.0.0'

@@ -2,44 +2,25 @@
 //  GMSPlace.h
 //  Google Places SDK for iOS
 //
-//  Copyright 2016 Google Inc.
+//  Copyright 2016 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
+
+#import "GMSPlacesDeprecationUtils.h"
 
 @class GMSAddressComponent;
-@class GMSCoordinateBounds;
 @class GMSOpeningHours;
 @class GMSPlacePhotoMetadata;
+@class GMSPlaceViewportInfo;
 @class GMSPlusCode;
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-/**
- * \defgroup PlacesOpenNowStatus GMSPlacesOpenNowStatus
- * @{
- */
-
-/**
- * Describes the current open status of a place.
- *
- * (Deprecated: This enum is currently not supported and should not be used. Use GMSPlaceOpenStatus
- * instead.)
- */
-typedef NS_ENUM(NSInteger, GMSPlacesOpenNowStatus) {
-  /** The place is open now. */
-  kGMSPlacesOpenNowStatusYes,
-  /** The place is not open now. */
-  kGMSPlacesOpenNowStatusNo,
-  /** We don't know whether the place is open now. */
-  kGMSPlacesOpenNowStatusUnknown,
-};
-
-/**@}*/
 
 /**
  * \defgroup PlacesPriceLevel GMSPlacesPriceLevel
@@ -80,6 +61,27 @@ typedef NS_ENUM(NSInteger, GMSPlaceOpenStatus) {
 /**@}*/
 
 /**
+ * \defgroup PlacesBusinessStatus GMSPlacesBusinessStatus
+ * @{
+ */
+
+/**
+ * Describes the business status of a place.
+ */
+typedef NS_ENUM(NSInteger, GMSPlacesBusinessStatus) {
+  /** The business status is not known. */
+  GMSPlacesBusinessStatusUnknown,
+  /** The business is operational. */
+  GMSPlacesBusinessStatusOperational,
+  /** The business is closed temporarily. */
+  GMSPlacesBusinessStatusClosedTemporarily,
+  /** The business is closed permanently. */
+  GMSPlacesBusinessStatusClosedPermanently,
+};
+
+/**@}*/
+
+/**
  * Represents a particular physical place. A GMSPlace encapsulates information about a physical
  * location, including its name, location, and any other information we might have about it. This
  * class is immutable.
@@ -98,14 +100,6 @@ typedef NS_ENUM(NSInteger, GMSPlaceOpenStatus) {
  * the Place.
  */
 @property(nonatomic, readonly, assign) CLLocationCoordinate2D coordinate;
-
-/**
- * Represents the open now status of the place at the time that the place was created.
- *
- * (Deprecated: This property is currently not supported and should not be used)
- */
-@property(nonatomic, readonly, assign) GMSPlacesOpenNowStatus openNowStatus __deprecated_msg(
-    "openNowStatus property is currently not supported and should not be used)");
 
 /**
  * Phone number of this place, in international format, i.e. including the country code prefixed
@@ -161,7 +155,7 @@ typedef NS_ENUM(NSInteger, GMSPlaceOpenStatus) {
  * |GMSPlace| object representing a store may have a relatively small viewport, while a |GMSPlace|
  * object representing a country may have a very large viewport.
  */
-@property(nonatomic, strong, readonly, nullable) GMSCoordinateBounds *viewport;
+@property(nonatomic, strong, readonly, nullable) GMSPlaceViewportInfo *viewportInfo;
 
 /**
  * An array of |GMSAddressComponent| objects representing the components in the place's address.
@@ -200,6 +194,11 @@ typedef NS_ENUM(NSInteger, GMSPlaceOpenStatus) {
 @property(nonatomic, readonly, nullable) NSNumber *UTCOffsetMinutes;
 
 /**
+ * The |GMSPlaceBusinessStatus| of the place.
+ */
+@property(nonatomic, readonly) GMSPlacesBusinessStatus businessStatus;
+
+/**
  * Default init is not available.
  */
 - (instancetype)init NS_UNAVAILABLE;
@@ -221,6 +220,18 @@ typedef NS_ENUM(NSInteger, GMSPlaceOpenStatus) {
  *     closed, and GMSPlaceOpenStatusUnknown if the open status is unknown.
  */
 - (GMSPlaceOpenStatus)isOpen;
+
+/**
+ * Background color of the icon according to Place type, to color the view behind the icon.
+ */
+@property(nonatomic, readonly, nullable) UIColor *iconBackgroundColor;
+
+/**
+ * The URL according to Place type, which you can use to retrieve the NSData of the Place icon.
+ * NOTES: URL link does not expire and the image size aspect ratio may be different depending on
+ * type.
+ */
+@property(nonatomic, readonly, nullable) NSURL *iconImageURL;
 
 @end
 

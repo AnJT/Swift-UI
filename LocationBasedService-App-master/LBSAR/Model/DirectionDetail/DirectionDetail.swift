@@ -1,8 +1,7 @@
 //
 //  BaseClass.swift
 //
-//  Created by skj on 17.6.2020
-//  Copyright (c) . All rights reserved.
+//  Created by ajt on 2021/12/16.
 //
 
 import Foundation

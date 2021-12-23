@@ -1,4 +1,3 @@
-#import "GMSAutocompleteBoundsMode.h"
 #import "GMSAutocompleteFetcher.h"
 #import "GMSAutocompleteFilter.h"
 #import "GMSAutocompleteMatchFragment.h"
@@ -17,6 +16,8 @@
 #import "GMSPlacePhotoMetadata.h"
 #import "GMSPlacePhotoMetadataList.h"
 #import "GMSPlaceTypes.h"
+#import "GMSPlaceViewportInfo.h"
 #import "GMSPlacesClient.h"
+#import "GMSPlacesDeprecationUtils.h"
 #import "GMSPlacesErrors.h"
 #import "GMSPlusCode.h"

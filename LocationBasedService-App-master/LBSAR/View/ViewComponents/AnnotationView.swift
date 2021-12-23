@@ -2,8 +2,7 @@
 //  AnnotationView.swift
 //  LBSARApp
 //
-//  Created by Sahi Joshi on 11/8/19.
-//  Copyright © 2019 Sahi Joshi. All rights reserved.
+//  Created by ajt on 2021/12/16.
 //
 
 import UIKit

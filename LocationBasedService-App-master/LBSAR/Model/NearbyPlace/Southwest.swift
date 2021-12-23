@@ -1,8 +1,7 @@
 //
 //  Southwest.swift
 //
-//  Created by skj on 16.6.2020
-//  Copyright (c) . All rights reserved.
+//  Created by ajt on 2021/12/16.
 //
 
 import Foundation

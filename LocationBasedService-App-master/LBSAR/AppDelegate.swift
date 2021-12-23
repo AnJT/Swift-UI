@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  LBSAR
 //
-//  Created by skj on 8.6.2020.
-//  Copyright © 2020 skj. All rights reserved.
+//  Created by ajt on 2021/12/16.
 //
 
 import UIKit

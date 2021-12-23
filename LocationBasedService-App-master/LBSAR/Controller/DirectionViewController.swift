@@ -2,8 +2,7 @@
 //  DirectionViewController.swift
 //  LBSAR
 //
-//  Created by skj on 10.3.2020.
-//  Copyright © 2020 skj. All rights reserved.
+//  Created by ajt on 2021/12/16.
 //
 
 import UIKit
@@ -106,6 +105,7 @@ class DirectionViewController: UIViewController {
         let request = MKDirections.Request()
         request.source = source
         request.destination = destination
+        // 返回一条单一的路线
         request.requestsAlternateRoutes = false
         
         let directions = MKDirections(request: request)
@@ -113,7 +113,7 @@ class DirectionViewController: UIViewController {
         // get directions coordinates
         directions.calculate { (response, error) in
             if error != nil {
-                print(error?.localizedDescription)
+              print(error?.localizedDescription ?? "error request for direction")
             } else {
                 let route = response?.routes[0]
                 

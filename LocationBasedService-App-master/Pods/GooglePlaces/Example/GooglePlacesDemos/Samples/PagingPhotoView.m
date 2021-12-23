@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All rights reserved.
+ * Copyright 2016 Google LLC. All rights reserved.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -159,14 +159,10 @@
     CGFloat imageHeight = usableScrollViewHeight - attributionHeight;
     CGFloat safeAreaX = 0.0f;
 
-#if defined(__IPHONE_11_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0)
     // Take into account the safe areas of the device screen and do not use that space for the
     // attribution text.
-    if (@available(iOS 11.0, *)) {
-      imageHeight -= self.safeAreaInsets.bottom;
-      safeAreaX = self.safeAreaInsets.left;
-    }
-#endif
+    imageHeight -= self.safeAreaInsets.bottom;
+    safeAreaX = self.safeAreaInsets.left;
 
     // Put the attribution view aligned to the same left edge as the photo, in the bottom left
     // corner of the screen.

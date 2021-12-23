@@ -2,7 +2,7 @@
 //  GMSAutocompleteFilter.h
 //  Google Places SDK for iOS
 //
-//  Copyright 2016 Google Inc.
+//  Copyright 2016 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, GMSPlacesAutocompleteTypeFilter) {
    */
   kGMSPlacesAutocompleteTypeFilterNoFilter,
   /**
-   * Geeocoding results, as opposed to business results.
+   * Geocoding results, as opposed to business results.
    */
   kGMSPlacesAutocompleteTypeFilterGeocode,
   /**
@@ -81,7 +81,6 @@ typedef NS_ENUM(NSInteger, GMSPlacesAutocompleteTypeFilter) {
  * NOTE: Ignored if the countries property is set.
  */
 @property(nonatomic, copy, nullable) NSString *country;
-;
 
 /**
  * The countries to restrict results to. This should be a ISO 3166-1 Alpha-2 country code (case
@@ -92,13 +91,13 @@ typedef NS_ENUM(NSInteger, GMSPlacesAutocompleteTypeFilter) {
 @property(nonatomic, copy, nullable) NSArray<NSString *> *countries;
 
 /**
- * The staight line distance origin location for measuring the straight line distance between the
+ * The straight line distance origin location for measuring the straight line distance between the
  * origin location and autocomplete predictions.
  */
 @property(nonatomic, nullable) CLLocation *origin;
 
 /**
- * The optional location bias to perfer place results near the location.
+ * The optional location bias to prefer place results near the location.
  */
 @property(nonatomic, nullable) id<GMSPlaceLocationBias> locationBias;
 
