@@ -120,13 +120,14 @@ class NearbyPlacesViewController: UIViewController {
 
     @IBAction func showARController(_ sender: Any) {
         arViewController = ARViewController()
+        // 设置 arViewController 的数据源。数据源负责提供需要显示的 POI
         arViewController.dataSource = self
         arViewController.trackingManager.userDistanceFilter = 25
         arViewController.trackingManager.reloadDistanceFilter = 75
 
         if let presenter = arViewController.presenter {
             presenter.presenterTransform = ARPresenterStackTransform()
-            presenter.maxDistance = 0
+            presenter.maxDistance = 1500
             presenter.maxVisibleAnnotations = 30
         }
         
@@ -188,8 +189,8 @@ extension NearbyPlacesViewController: ARDataSource {
             annotationView.ratingView.rating = aPlace.rating
             annotationView.imagePlace.layer.cornerRadius = 4
             
-            let imageUrl = URL.init(string: aPlace.imageUrl)
-//            annotationView.imagePlace.sd_setImage(with: imageUrl!, placeholderImage: UIImage(named: "Placeholder"), options: .highPriority)
+            // let imageUrl = URL.init(string: aPlace.imageUrl)
+            // annotationView.imagePlace.sd_setImage(with: imageUrl!, placeholderImage: UIImage(named: "Placeholder"), options: .highPriority)
         }
         
         return annotationView
