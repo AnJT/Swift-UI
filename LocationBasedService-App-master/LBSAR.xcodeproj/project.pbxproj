@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		135B3B7327776BEB007425D0 /* Trans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B3B7227776BEB007425D0 /* Trans.swift */; };
 		6BA3145AE6870352AEA0D452 /* libPods-LBSARTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A4759ED8A8048E4EE709CE /* libPods-LBSARTests.a */; };
 		773DAF44248DC8E1002EE000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773DAF43248DC8E1002EE000 /* AppDelegate.swift */; };
 		773DAF46248DC8E1002EE000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773DAF45248DC8E1002EE000 /* SceneDelegate.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		135B3B7227776BEB007425D0 /* Trans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trans.swift; sourceTree = "<group>"; };
 		1CF8F7267F84B790BB651298 /* Pods-LBSARTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSARTests.release.xcconfig"; path = "Target Support Files/Pods-LBSARTests/Pods-LBSARTests.release.xcconfig"; sourceTree = "<group>"; };
 		773DAF40248DC8E1002EE000 /* LBSAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBSAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773DAF43248DC8E1002EE000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				775667F02498B3BB00406297 /* Extensions */,
 				773DAFB124916BAA002EE000 /* Constants.swift */,
+				135B3B7227776BEB007425D0 /* Trans.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				77992459249831470083EF85 /* Viewport.swift in Sources */,
 				773DAFB224916BAA002EE000 /* Constants.swift in Sources */,
 				7799245F249831470083EF85 /* OpeningHours.swift in Sources */,
+				135B3B7327776BEB007425D0 /* Trans.swift in Sources */,
 				7799244A249827120083EF85 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,13 +664,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -715,12 +720,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -731,15 +738,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CNJD48929;
+				DEVELOPMENT_TEAM = PPS6PDWP5P;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = LBSAR/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anjt.LBSAR;
+				PRODUCT_BUNDLE_IDENTIFIER = tjsse.LBSAnJT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -752,15 +759,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3CNJD48929;
+				DEVELOPMENT_TEAM = PPS6PDWP5P;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = LBSAR/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anjt.LBSAR;
+				PRODUCT_BUNDLE_IDENTIFIER = tjsse.LBSAnJT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

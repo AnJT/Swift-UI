@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import MapKit
 import HDAugmentedReality
 
 class NearbyPlacesViewController: UIViewController {
@@ -23,6 +24,7 @@ class NearbyPlacesViewController: UIViewController {
     var places = [Place]()
     var loadPOIsOnlyOnce = false
     var currentLocation: CLLocation?
+    let trans = Trans()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,21 +35,21 @@ class NearbyPlacesViewController: UIViewController {
     
     func configureMap() {
         locationManager.delegate = self
-        // locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         // 省点电
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
         
         // 设置googleMap画布的默认位置
-        let camera = GMSCameraPosition.camera(withLatitude: 31.28540017791541, longitude: 121.49854302406311, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 31.281571640459426, longitude: 121.21394959910727, zoom: 15.0)
         googleMaps.camera = camera
         
         googleMaps.delegate = self
         // 显示当前位置
-        googleMaps?.isMyLocationEnabled = true
+        googleMaps?.isMyLocationEnabled = false
         // 显示自己的位置、指南针标识
-        googleMaps.settings.myLocationButton = true
+//        googleMaps.settings.myLocationButton = true
         googleMaps.settings.compassButton = true
         // 启用缩放手势
         googleMaps.settings.zoomGestures = true
@@ -73,6 +75,9 @@ class NearbyPlacesViewController: UIViewController {
     private func setupCameraPosition() {
         let camera = GMSCameraPosition.camera(withLatitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude, zoom: 15.0)
         googleMaps.animate(to: camera)
+        let curPlaceMark = GMSMarker()
+        curPlaceMark.position = CLLocationCoordinate2DMake(currentLocation!.coordinate.latitude, currentLocation!.coordinate.longitude)
+        curPlaceMark.map = self.googleMaps
     }
     
     // 根据当前位置以及key获取周边信息
@@ -127,7 +132,7 @@ class NearbyPlacesViewController: UIViewController {
 
         if let presenter = arViewController.presenter {
             presenter.presenterTransform = ARPresenterStackTransform()
-            presenter.maxDistance = 1500
+            presenter.maxDistance = 0
             presenter.maxVisibleAnnotations = 30
         }
         
@@ -155,20 +160,23 @@ extension NearbyPlacesViewController: CLLocationManagerDelegate {
     // 获取当前位置
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if !locations.isEmpty {
-            // get current location
-            currentLocation = locations.last!
-            // 定位精度
-            if currentLocation!.horizontalAccuracy < 100 {
-                manager.stopUpdatingLocation()
+        guard !locations.isEmpty else {return}
+        // get current location
+        let location = trans.transformFromWGSToGCJ(wgsLoc: locations.last!.coordinate)
+        currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        // currentLocation = locations.last!
+        // 定位精度
+        if currentLocation!.horizontalAccuracy < 100 {
+            manager.stopUpdatingLocation()
+            
+            if !loadPOIsOnlyOnce {
+                setupCameraPosition()
+                loadNearbyPlacesData()
                 
-                if !loadPOIsOnlyOnce {
-                    setupCameraPosition()
-                    loadNearbyPlacesData()
-                    loadPOIsOnlyOnce = true
-                }
+                loadPOIsOnlyOnce = true
             }
         }
+        
     }
 }
 
@@ -223,11 +231,11 @@ extension NearbyPlacesViewController: MarkerCustomInfoDelegate {
 
 extension NearbyPlacesViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        googleMaps.isMyLocationEnabled = true
+        googleMaps.isMyLocationEnabled = false
     }
 
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        googleMaps.isMyLocationEnabled = true
+        googleMaps.isMyLocationEnabled = false
 
         if (gesture) {
             mapView.selectedMarker = nil
@@ -236,7 +244,7 @@ extension NearbyPlacesViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         tappedMarker = marker
-        googleMaps.isMyLocationEnabled = true
+        googleMaps.isMyLocationEnabled = false
                 
         if let myMarker = marker as? MyMarker {
             if let aPlace = myMarker.place {
@@ -251,7 +259,7 @@ extension NearbyPlacesViewController: GMSMapViewDelegate {
     }
 
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
-        googleMaps.isMyLocationEnabled = true
+        googleMaps.isMyLocationEnabled = false
         googleMaps.selectedMarker = nil
         return false
     }

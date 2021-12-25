@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="STv-5j-5eg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="STv-5j-5eg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltM-oM-9pp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872" y="-248"/>
+            <point key="canvasLocation" x="1871.0144927536232" y="-248.4375"/>
         </scene>
         <!--Direction View Controller-->
         <scene sceneID="qmT-Lt-Swp">
@@ -150,18 +150,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-Rf-QHw" customClass="RoundedBtn" customModule="LBSAR" customModuleProvider="target">
+                                <rect key="frame" x="10" y="734" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="P7m-8M-hFs"/>
+                                    <constraint firstAttribute="height" constant="30" id="u2w-jm-5gY"/>
+                                </constraints>
+                                <state key="normal" title="Navigation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toNavigation:" destination="3AR-By-kOL" eventType="touchUpInside" id="cIZ-9F-YUh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9oj-aM-j6u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vlF-K1-YBU" firstAttribute="leading" secondItem="9oj-aM-j6u" secondAttribute="leading" id="NYk-0r-TR4"/>
+                            <constraint firstItem="TrO-Rf-QHw" firstAttribute="leading" secondItem="9oj-aM-j6u" secondAttribute="leading" constant="10" id="X8H-EH-nic"/>
                             <constraint firstItem="vlF-K1-YBU" firstAttribute="top" secondItem="9oj-aM-j6u" secondAttribute="top" id="kxd-fR-WDD"/>
                             <constraint firstItem="9oj-aM-j6u" firstAttribute="bottom" secondItem="vlF-K1-YBU" secondAttribute="bottom" id="qqD-w6-gDC"/>
                             <constraint firstItem="9oj-aM-j6u" firstAttribute="trailing" secondItem="vlF-K1-YBU" secondAttribute="trailing" id="vTe-Er-99Y"/>
+                            <constraint firstItem="TrO-Rf-QHw" firstAttribute="bottom" secondItem="9oj-aM-j6u" secondAttribute="bottom" constant="-10" id="yNJ-JZ-zre"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5RI-CN-Ru1"/>
                     <connections>
+                        <outlet property="btnNavigation" destination="TrO-Rf-QHw" id="MaM-DV-R6r"/>
                         <outlet property="googleMaps" destination="vlF-K1-YBU" id="Vu1-xX-gBb"/>
                     </connections>
                 </viewController>

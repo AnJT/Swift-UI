@@ -13,20 +13,42 @@ import Polyline
 
 class DirectionViewController: UIViewController {
     @IBOutlet weak var googleMaps: GMSMapView!
-
+    @IBOutlet weak var btnNavigation: RoundedBtn!
+  
     var customInfoWindow : InfoView?
     var aHomeItem = HomeItem()
     var aPlace: Place?
     var tappedMarker : GMSMarker?
+    let trans = Trans()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // initialize info view
         customInfoWindow = InfoView().loadView()
         configureMap()
         loadDetailInformationFromGoogleAPI()
         showDirection()
+    }
+  
+    @IBAction func toNavigation(_ sender: Any) {
+        if let aPlace = aPlace {
+            // let location = trans.transformFromGCJToWGS(p: aPlace.curLocation!.coordinate)
+            // let sourceLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            let sourceLocation = CLLocationCoordinate2D(latitude: aPlace.curLocation!.coordinate.latitude, longitude: aPlace.curLocation!.coordinate.longitude)
+            let desLocation = CLLocationCoordinate2D(latitude: (aPlace.location.coordinate.latitude), longitude: (aPlace.location.coordinate.longitude))
+            
+            let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
+            let desPlaceMark = MKPlacemark(coordinate: desLocation)
+            
+            let source = MKMapItem(placemark: sourcePlaceMark)
+            source.name = "me"
+            let destination = MKMapItem(placemark: desPlaceMark)
+            destination.name = aPlace.placeName
+            
+            MKMapItem.openMaps(with: [source, destination],
+                               launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsShowsTrafficKey: NSNumber(true)])
+        }
     }
     
     // MARK: - Private Methods
@@ -37,10 +59,14 @@ class DirectionViewController: UIViewController {
             
             googleMaps.camera = camera
             googleMaps.delegate = self
-            googleMaps?.isMyLocationEnabled = true
+            googleMaps?.isMyLocationEnabled = false
             googleMaps.settings.myLocationButton = true
             googleMaps.settings.compassButton = true
             googleMaps.settings.zoomGestures = true
+            
+            let curPlaceMark = GMSMarker()
+            curPlaceMark.position = CLLocationCoordinate2DMake(aPlace.curLocation!.coordinate.latitude, aPlace.curLocation!.coordinate.longitude)
+            curPlaceMark.map = self.googleMaps
         }
     }
 
@@ -108,6 +134,8 @@ class DirectionViewController: UIViewController {
         // 返回一条单一的路线
         request.requestsAlternateRoutes = false
         
+        print("hh")
+        
         let directions = MKDirections(request: request)
         
         // get directions coordinates
@@ -140,6 +168,8 @@ class DirectionViewController: UIViewController {
     }
 }
 
+  
+
 // MARK: - GMSMapViewDelegate Methods
 
 extension DirectionViewController: GMSMapViewDelegate {
@@ -149,7 +179,7 @@ extension DirectionViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        googleMaps.isMyLocationEnabled = true
+        googleMaps.isMyLocationEnabled = false
         
         // tap on marker displays info view with data
         if let aPlace = aPlace {
