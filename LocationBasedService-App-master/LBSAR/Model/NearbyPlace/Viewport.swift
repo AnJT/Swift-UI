@@ -23,5 +23,4 @@ struct Viewport: Codable {
     northeast = try container.decodeIfPresent(Northeast.self, forKey: .northeast)
     southwest = try container.decodeIfPresent(Southwest.self, forKey: .southwest)
   }
-
 }

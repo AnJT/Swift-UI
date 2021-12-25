@@ -22,5 +22,4 @@ struct PlaceInfo: Codable {
     website = try container.decodeIfPresent(String.self, forKey: .website) ?? ""
     formattedPhoneNumber = try container.decodeIfPresent(String.self, forKey:  .formattedPhoneNumber) ?? ""
   }
-
 }

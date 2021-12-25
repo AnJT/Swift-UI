@@ -21,5 +21,4 @@ struct OpeningHours: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     openNow = try container.decodeIfPresent(Bool.self, forKey: .openNow)
   }
-
 }

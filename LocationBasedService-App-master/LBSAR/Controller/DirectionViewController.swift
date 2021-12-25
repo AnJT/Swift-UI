@@ -169,5 +169,4 @@ extension DirectionViewController: GMSMapViewDelegate {
             customInfoWindow?.center.y -= 110
         }
     }
-
 }

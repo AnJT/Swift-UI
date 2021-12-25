@@ -11,7 +11,6 @@ import CoreLocation
 struct WebServices {
     
     static func loadNearbyPointOfInterest(location: CLLocation, radius: Int = 9000, searchKey: String = "", completion: @escaping ([Results]?) -> ()) {
-        // let router = Router.loadPointOfInterest(location: location, radius: 9000, searchKey: "bus_station")
         let router = Router.loadPointOfInterest(location: location, radius: 9000, searchKey: searchKey)
         NetworkRequest.request(router){ (result: Result<PointofInterest, Error>) in
             switch result {
@@ -35,5 +34,4 @@ struct WebServices {
             }
         }
     }
-    
 }

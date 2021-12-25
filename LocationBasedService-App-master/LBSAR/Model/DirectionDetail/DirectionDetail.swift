@@ -18,5 +18,4 @@ struct DirectionDetail: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     result = try container.decodeIfPresent(PlaceInfo.self, forKey: .result)
   }
-
 }

@@ -59,5 +59,4 @@ enum Router: EndPointType, URLConverter {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         return urlRequest
     }
-    
 }

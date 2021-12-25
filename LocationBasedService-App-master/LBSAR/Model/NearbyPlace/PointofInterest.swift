@@ -18,5 +18,4 @@ struct PointofInterest: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     results = try container.decodeIfPresent([Results].self, forKey: .results)
   }
-
 }

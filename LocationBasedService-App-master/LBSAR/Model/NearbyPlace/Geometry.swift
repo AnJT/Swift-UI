@@ -23,5 +23,4 @@ struct Geometry: Codable {
     location = try container.decodeIfPresent(Location.self, forKey: .location)
     viewport = try container.decodeIfPresent(Viewport.self, forKey: .viewport)
   }
-
 }

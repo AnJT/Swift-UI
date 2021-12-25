@@ -36,8 +36,8 @@ class AnnotationView: ARAnnotationView {
     
     func loadView() -> AnnotationView{
         let customInfoWindow = Bundle.main.loadNibNamed("AnnotationView", owner: self, options: nil)?[0] as! AnnotationView
-        customInfoWindow.layer.backgroundColor = UIColor(red: 62/255, green: 92/255, blue: 111/255, alpha: 0.9).cgColor
-        customInfoWindow.layer.cornerRadius = 4
+        customInfoWindow.layer.backgroundColor = UIColor(red: 62/255, green: 92/255, blue: 111/255, alpha: 0.7).cgColor
+        customInfoWindow.layer.cornerRadius = 8
         customInfoWindow.ratingView.settings.fillMode = .precise
 
         return customInfoWindow
@@ -46,5 +46,4 @@ class AnnotationView: ARAnnotationView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         delegate?.didTouch(annotationView: self)
     }
-
 }

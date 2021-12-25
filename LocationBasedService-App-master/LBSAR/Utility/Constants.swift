@@ -14,5 +14,4 @@ struct Constants {
         static let collectionViewMinmCellSpacing = 10
         static let mapRadius = 9000
     }
-
 }

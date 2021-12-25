@@ -23,5 +23,4 @@ struct PlusCode: Codable {
     globalCode = try container.decodeIfPresent(String.self, forKey: .globalCode)
     compoundCode = try container.decodeIfPresent(String.self, forKey: .compoundCode)
   }
-
 }

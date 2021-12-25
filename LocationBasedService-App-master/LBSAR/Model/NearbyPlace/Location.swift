@@ -23,5 +23,4 @@ struct Location: Codable {
     lng = try container.decodeIfPresent(Float.self, forKey: .lng)
     lat = try container.decodeIfPresent(Float.self, forKey: .lat)
   }
-
 }

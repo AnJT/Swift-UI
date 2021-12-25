@@ -29,5 +29,4 @@ struct Photos: Codable {
     height = try container.decodeIfPresent(Int.self, forKey: .height)
     width = try container.decodeIfPresent(Int.self, forKey: .width)
   }
-
 }

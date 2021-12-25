@@ -71,5 +71,4 @@ struct Results: Codable {
     geometry = try container.decodeIfPresent(Geometry.self, forKey: .geometry)
     businessStatus = try container.decodeIfPresent(String.self, forKey: .businessStatus)
   }
-
 }
