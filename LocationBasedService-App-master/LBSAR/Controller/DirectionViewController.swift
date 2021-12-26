@@ -59,7 +59,7 @@ class DirectionViewController: UIViewController {
             
             googleMaps.camera = camera
             googleMaps.delegate = self
-            googleMaps?.isMyLocationEnabled = false
+            googleMaps?.isMyLocationEnabled = true
             googleMaps.settings.myLocationButton = true
             googleMaps.settings.compassButton = true
             googleMaps.settings.zoomGestures = true
@@ -179,7 +179,7 @@ extension DirectionViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        googleMaps.isMyLocationEnabled = false
+        googleMaps.isMyLocationEnabled = true
         
         // tap on marker displays info view with data
         if let aPlace = aPlace {
